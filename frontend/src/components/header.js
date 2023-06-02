@@ -119,7 +119,7 @@ export const Header = () => {
         <HeaderContent>
           {isLoggedIn ? (
             <HeaderContent>
-              <UserName>User 님</UserName> {/** todo User name */}
+              <UserName>User 님</UserName> {/** todo User name 받아오기*/}
               <LogInOut onClick={() => logOutHandler()}>LogOut</LogInOut>
             </HeaderContent>
           ) : (
