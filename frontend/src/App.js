@@ -3,7 +3,8 @@ import Home from "./pages/Home";
 import VehicleSearch from "./pages/VehicleSearch";
 import Return from "./pages/Return";
 import RentalHistory from "./pages/RentalHistory";
-import { Header } from "./components/Header";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import MyPage from "./pages/MyPage";
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/rentalhistory" element={<RentalHistory />} />
           <Route path="/mypage" element={<MyPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
