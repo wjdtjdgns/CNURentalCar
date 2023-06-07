@@ -69,7 +69,7 @@ const CarModelSelector = ({ selectedOption, setSelectedOption }) => {
         onChange={handleSelectedOptionChange}
         options={options}
         menuPlacement="top"
-        placeholder={<img src={car} alt="car" />}
+        placeholder={<img src={car} alt="car Icon" />}
         styles={customStyles}
         isOptionDisabled={isOptionDisabled}
       />
