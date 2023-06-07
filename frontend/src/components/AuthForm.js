@@ -7,6 +7,7 @@ import {
   UserNameState,
   UserEmailState,
 } from "../states/LoginState";
+import GlobalConstant from "../GlobalConstant";
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -110,7 +111,7 @@ const AuthForm = ({ onClose, type = "login" }) => {
 
     if (isLoginForm) {
       try {
-        const response = await axios.post("http://localhost:3001/login", {
+        const response = await axios.post(GlobalConstant.url + "/login", {
           cno: id,
           passwd: password,
         });
