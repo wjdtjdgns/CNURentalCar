@@ -5,6 +5,11 @@ export const LoginState = atom({
   default: false,
 });
 
+export const UserIdState = atom({
+  key: "UserIdState",
+  default: "",
+});
+
 export const UserNameState = atom({
   key: "UserNameState",
   default: "",

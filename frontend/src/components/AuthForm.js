@@ -6,6 +6,7 @@ import {
   LoginState,
   UserNameState,
   UserEmailState,
+  UserIdState,
 } from "../states/LoginState";
 import GlobalConstant from "../GlobalConstant";
 
@@ -84,6 +85,7 @@ const AuthForm = ({ onClose, type = "login" }) => {
   const setLoggedIn = useSetRecoilState(LoginState);
   const setUserName = useSetRecoilState(UserNameState); // 이름 저장을 위한 Recoil setter
   const setUserEmail = useSetRecoilState(UserEmailState); // 이메일 저장을 위한 Recoil setter
+  const setUserId = useSetRecoilState(UserIdState); // 이메일 저장을 위한 Recoil setter
 
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -124,10 +126,12 @@ const AuthForm = ({ onClose, type = "login" }) => {
           setLoggedIn(true);
           setUserName(name); // Recoil로 이름 저장
           setUserEmail(email); // Recoil로 이메일 저장
+          setUserId(id);
           handleClose();
           localStorage.setItem("isLoggedIn", "true");
           localStorage.setItem("userName", name);
           localStorage.setItem("userEmail", email);
+          localStorage.setItem("userId", id);
         } else {
           alert("Error");
         }
