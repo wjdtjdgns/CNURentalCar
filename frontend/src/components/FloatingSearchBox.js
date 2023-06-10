@@ -48,9 +48,11 @@ const SearchButton = styled.button`
 `;
 
 const FloatingSearchBox = () => {
-  const today = new Date().toISOString().split("T")[0];
-  const [startDate, setStartDate] = useState(today);
-  const [endDate, setEndDate] = useState(today);
+  const today = new Date(); // 현재 날짜와 시간을 가져옴
+  today.setDate(today.getDate() + 1);
+  const nextDay = today.toISOString().split("T")[0];
+  const [startDate, setStartDate] = useState(nextDay);
+  const [endDate, setEndDate] = useState(nextDay);
   const [selectedOption, setSelectedOption] = useState(null);
   const navigate = useNavigate();
 
