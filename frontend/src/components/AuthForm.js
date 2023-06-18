@@ -120,7 +120,6 @@ const AuthForm = ({ onClose, type = "login" }) => {
 
         if (response.status === 200) {
           // 로그인 성공, 서버에서 받은 데이터로 이름과 이메일 저장
-          console.log(response.data);
           const { name, email } = response.data;
           // 로그인 상태를 true로 설정
           setLoggedIn(true);
