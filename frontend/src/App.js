@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import VehicleSearch from "./pages/VehicleSearch";
-import Return from "./pages/Return";
+import ReservationHistory from "./pages/ReservationHistory";
 import RentalHistory from "./pages/RentalHistory";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/vehiclesearch" element={<VehicleSearch />} />
-          <Route path="/return" element={<Return />} />
+          <Route path="/ReservationHistory" element={<ReservationHistory />} />
           <Route path="/rentalhistory" element={<RentalHistory />} />
           <Route path="/mypage" element={<MyPage />} />
         </Routes>
