@@ -12,7 +12,7 @@ const InputContainer = styled.div`
 `;
 
 const InputLabel = styled.label`
-  font-weight: bold;
+  font-weight: ${(props) => (props.readOnly ? "400" : "bold")};
 `;
 
 const InputStyled = styled.input`
@@ -45,6 +45,7 @@ const DateRangePicker = ({
   endDate,
   onStartDateChange,
   onEndDateChange,
+  type = "none",
 }) => {
   const handleStartDateChange = (event) => {
     const selectedDate = event.target.value;
@@ -63,6 +64,22 @@ const DateRangePicker = ({
       onEndDateChange(selectedDate);
     }
   };
+
+  if (type === "read") {
+    return (
+      <DatePickerContainer>
+        <InputContainer>
+          <InputLabel readOnly>Pick-up date:</InputLabel>
+          <InputStyled type="date" value={startDate} readOnly />
+        </InputContainer>
+        <TildeSpan>~</TildeSpan>
+        <InputContainer>
+          <InputLabel readOnly>Drop-off date:</InputLabel>
+          <InputStyled type="date" value={endDate} readOnly />
+        </InputContainer>
+      </DatePickerContainer>
+    );
+  }
 
   return (
     <DatePickerContainer>

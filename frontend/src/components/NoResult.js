@@ -27,12 +27,20 @@ const Info = styled.h3`
   font-weight: 400;
 `;
 
-const NoResult = () => {
+const NoResult = ({ type = "search" }) => {
   return (
     <Wrapper>
       <Image src={NOTHING} alt="nothing" />
-      <Result>검색 결과가 존재하지 않습니다!</Result>
-      <Info>하단의 검색바를 통해 검색해주세요!</Info>
+      {type === "search" ? (
+        <>
+          <Result>검색 결과가 존재하지 않습니다!</Result>
+          <Info>하단의 검색바를 통해 검색해주세요!</Info>
+        </>
+      ) : (
+        <>
+          <Result>내역이 존재하지 않습니다!</Result>
+        </>
+      )}
     </Wrapper>
   );
 };
