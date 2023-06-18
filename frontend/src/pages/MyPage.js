@@ -63,7 +63,6 @@ const MyPage = () => {
       getStatistics();
     }
   }, [isLoggedIn, navigate]);
-  console.log(rentalVehicleByCustomer, totalRentPaymentByCustomer, rentalRank);
   return (
     <PageContainer>
       <Container>
