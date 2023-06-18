@@ -79,7 +79,10 @@ const FloatingSearchBox = () => {
 
       if (response.status === 200) {
         navigate("/vehiclesearch", {
-          state: { data: response.data.result },
+          state: {
+            data: response.data.result,
+            date: { start: startDate, end: endDate },
+          },
         });
       } else {
         alert("Error");
